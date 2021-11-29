@@ -13,9 +13,21 @@ header{
   padding: 15px 50px;
 
   /*background-color: #dc3545;*/
-  color: var(--text-color);
+  color: #FFF
+
+
 }
 
 header div{
   display: inherit;
+  align-items: center;
+  height: 100%;
+}
+
+header h2{
+  margin: 0;
+}
+
+div.right-bloc > *{
+  padding: 0 10px;
 }

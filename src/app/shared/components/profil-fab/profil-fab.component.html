@@ -1,0 +1,15 @@
+<button mat-fab color="primary" [matMenuTriggerFor]="menu">
+  <fa-icon [icon]="faUser" size="lg"></fa-icon>
+</button>
+
+<mat-menu #menu="matMenu" xPosition="before">
+  <button mat-menu-item>
+    <fa-icon [icon]="faUser" size="lg"></fa-icon>
+    <span>Profil</span>
+  </button>
+  <mat-divider></mat-divider>
+  <button mat-menu-item>
+    <mat-icon>logout</mat-icon>
+    <span>Logout</span>
+  </button>
+</mat-menu>

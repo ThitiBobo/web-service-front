@@ -15,11 +15,12 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
-import { ProfilComponent } from './shared/components/profil/profil.component';
 import { ThemeSwitchComponent } from './shared/components/theme-switch/theme-switch.component';
 import { MatButtonToggleModule } from "@angular/material/button-toggle";
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProfilFabComponent } from './shared/components/profil-fab/profil-fab.component';
+import {MatMenuModule} from "@angular/material/menu";
 
 
 
@@ -31,8 +32,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HeaderComponent,
     FooterComponent,
     NavbarComponent,
-    ProfilComponent,
     ThemeSwitchComponent,
+    ProfilFabComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +46,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatIconModule,
     MatListModule,
     MatButtonToggleModule,
+    MatMenuModule,
     FontAwesomeModule,
     BrowserAnimationsModule
   ],
