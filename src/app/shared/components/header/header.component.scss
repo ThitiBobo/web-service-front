@@ -1,0 +1,21 @@
+header{
+
+  /* Facilite l'affichage avec les Flexbox */
+  /*position: absolute;*/
+  /*top: 0;*/
+  /*left: 0;*/
+
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+
+  /*background-color: #dc3545;*/
+  color: var(--text-color);
+}
+
+header div{
+  display: inherit;
+}
