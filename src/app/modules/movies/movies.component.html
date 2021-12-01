@@ -1,1 +1,9 @@
-<p>movies works!</p>
+<div class="movies-content-test">
+  <h1>Films</h1>
+
+  <div fxLayout="row wrap" fxLayoutGap="20px grid">
+    <div fxFlex.xs="100%" fxFlex.sm="50%" fxFlex.md="33%" fxFlex="20%" *ngFor="let movie of movies">
+      <app-movie-card class="movie-card" [title]="movie.title" [coverPath]="movie.coverPath" (click)="openDialog()"></app-movie-card>
+    </div>
+  </div>
+</div>

@@ -3,8 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './shared/components/header/header.component';
-import { FooterComponent } from './shared/components/footer/footer.component';
 import { NotFoundComponent } from './modules/not-found/not-found.component';
 import { HomeComponent } from "./modules/home/home.component";
 import { MoviesModule } from './modules/movies/movies.module';
@@ -14,14 +12,20 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { NavbarComponent } from './shared/components/navbar/navbar.component';
-import { ThemeSwitchComponent } from './shared/components/theme-switch/theme-switch.component';
 import { MatButtonToggleModule } from "@angular/material/button-toggle";
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ProfilFabComponent } from './shared/components/profil-fab/profil-fab.component';
 import {MatMenuModule} from "@angular/material/menu";
-
+import {MatCardModule} from "@angular/material/card";
+import {HeaderComponent} from "./shared/components/header/header.component";
+import {FooterComponent} from "./shared/components/footer/footer.component";
+import {MovieCardComponent} from "./shared/components/movie-card/movie-card.component";
+import {NavbarComponent} from "./shared/components/navbar/navbar.component";
+import {ProfilFabComponent} from "./shared/components/profil-fab/profil-fab.component";
+import {ThemeSwitchComponent} from "./shared/components/theme-switch/theme-switch.component";
+import {FlexLayoutModule} from "@angular/flex-layout";
+import { MovieDescriptionComponent } from './shared/components/movie-description/movie-description.component';
+import {MatDialogModule} from "@angular/material/dialog";
 
 
 @NgModule({
@@ -32,8 +36,10 @@ import {MatMenuModule} from "@angular/material/menu";
     HeaderComponent,
     FooterComponent,
     NavbarComponent,
-    ThemeSwitchComponent,
     ProfilFabComponent,
+    ThemeSwitchComponent,
+    MovieDescriptionComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -47,10 +53,14 @@ import {MatMenuModule} from "@angular/material/menu";
     MatListModule,
     MatButtonToggleModule,
     MatMenuModule,
+    MatCardModule,
+    MatDialogModule,
     FontAwesomeModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FlexLayoutModule,
   ],
   providers: [],
+  exports: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

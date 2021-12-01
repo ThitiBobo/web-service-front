@@ -1,10 +1,7 @@
 @use '../../../node_modules/@angular/material/index' as mat;
-
-@use '/src/app/shared/components/header/header-theme.component' as header;
-@use '/src/app/shared/components/theme-switch/theme-switch-theme.component' as theme-switch;
+@use '/src/app/_app-theme' as app;
 
 @include mat.core();
-
 
 // Define a light theme
 $light-primary: mat.define-palette(mat.$blue-grey-palette);
@@ -32,19 +29,11 @@ $dark-theme: mat.define-dark-theme((
   )
 ));
 
-@include mat.core-theme($light-theme);
-@include mat.button-theme($light-theme);
+
 @include mat.all-component-themes($light-theme);
-
-@include header.theme($light-theme);
-@include theme-switch.theme($light-theme);
-
+@include app.theme($light-theme);
 
 .dark-theme {
-  @include mat.core-color($dark-theme);
-  @include mat.button-color($dark-theme);
   @include mat.all-component-themes($dark-theme);
-
-  @include header.theme($dark-theme);
-  @include theme-switch.theme($dark-theme);
+  @include app.theme($dark-theme);
 }
