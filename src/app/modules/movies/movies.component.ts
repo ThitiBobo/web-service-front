@@ -28,7 +28,7 @@ export class MoviesComponent implements OnInit {
   }
 
   openDialog() {
-    const dialogRef = this.dialog.open(MovieDescriptionComponent);
+    const dialogRef = this.dialog.open(MovieDescriptionComponent, { panelClass: 'custom-dialog-container' });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
