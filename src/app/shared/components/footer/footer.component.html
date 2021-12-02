@@ -1,1 +1,22 @@
-<p>footer works!</p>
+<div class="footer">
+
+  <div id="title">
+    <img src="assets/images/logo.svg">
+    <h2>AlhuileCiné</h2>
+  </div>
+
+  <div class="github-account-container" fxLayout="row wrap" fxLayoutGap="grid">
+    <div class="github-account"
+         fxFlex.xs="100%" fxFlex.sm="100%" fxFlex.md="33%" fxFlex="20%"
+         *ngFor="let account of github_accounts">
+      <a href="{{account.link}}">
+        <fa-icon [icon]="faGithub" size="2x"></fa-icon>
+        <h2>{{account.nameTag}}</h2>
+      </a>
+    </div>
+  </div>
+
+  <div class="copyright">
+    <p>&copy; copyright 2020 - 2021 Polytech</p>
+  </div>
+</div>

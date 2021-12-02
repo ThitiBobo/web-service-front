@@ -1,6 +1,7 @@
 @use '/node_modules/@angular/material/index' as mat;
 
 @use 'sass:map';
+@use '/src/app/shared/components/footer/footer-theme' as footer;
 @use '/src/app/shared/components/header/header-theme.component' as header;
 @use '/src/app/shared/components/theme-switch/theme-switch-theme.component' as theme-switch;
 
@@ -18,39 +19,9 @@
     color: mat.get-color-from-palette($foreground, text);
   }
 
+  @include footer.theme($theme);
   @include header.theme($theme);
   @include theme-switch.theme($theme);
-}
-
-
-
-$breakpoints-xs: 0px;
-$breakpoints-sm: 576px;
-$breakpoints-md: 768px;
-$breakpoints-lg: 992px;
-$breakpoints-xl: 1200px;
-$breakpoints-xxl: 1400px;
-
-main{
-  padding: 50px 5px;
-}
-
-@media (min-width: $breakpoints-sm) {
-  main{
-    padding: 50px 50px;
-  }
-}
-
-@media (min-width: $breakpoints-md) {
-  main{
-    padding: 50px 100px;
-  }
-}
-
-@media (min-width: $breakpoints-lg) {
-  main{
-    padding: 50px 200px;
-  }
 }
 
 

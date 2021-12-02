@@ -32,6 +32,7 @@
             ],
             "styles": [
               "src/styles.scss",
+              "src/assets/scss/fonts.scss",
               "src/assets/themes/theme.scss"
             ],
             "scripts": []

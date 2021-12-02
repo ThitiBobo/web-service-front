@@ -1,0 +1,76 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  color: #FFFFFF;
+
+  #title {
+    display: inherit;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 10px;
+
+    h2 {
+      font: 3em "YellowTail";
+      margin: 0 20px;
+    }
+  }
+
+  .github-account-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+    justify-content: space-around;
+    margin: 20px 0;
+  }
+
+  .github-account {
+    max-width: fit-content !important;
+    padding: 10px 20px;
+    a {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    h2 {
+      padding-left: 10px;
+      margin: 0;
+    }
+  }
+
+  .copyright{
+    text-align: center;
+  }
+}
+
+
+
+$breakpoints-xs: 0px;
+$breakpoints-sm: 576px;
+$breakpoints-md: 768px;
+$breakpoints-lg: 992px;
+$breakpoints-xl: 1200px;
+$breakpoints-xxl: 1400px;
+
+.footer{
+  padding: 50px 5px;
+}
+
+@media (min-width: $breakpoints-sm) {
+  .footer{
+    padding: 50px 50px;
+  }
+}
+
+@media (min-width: $breakpoints-md) {
+  .footer{
+    padding: 50px 100px;
+  }
+}
+
+@media (min-width: $breakpoints-lg) {
+  .footer{
+    padding: 50px 200px;
+  }
+}

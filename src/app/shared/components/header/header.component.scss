@@ -24,8 +24,14 @@ header div{
   height: 100%;
 }
 
-header h2{
+header a{
   margin: 0;
+  display: flex;
+  align-items: center;
+  h2{
+    margin: 0 0 0 20px;
+    font: 2.5em "YellowTail";
+  }
 }
 
 div.right-bloc > *{

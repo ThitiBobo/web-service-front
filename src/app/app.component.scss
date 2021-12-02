@@ -1,0 +1,43 @@
+:host{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+
+  main{
+    flex-grow: 1;
+  }
+  app-footer{
+
+  }
+}
+
+
+$breakpoints-xs: 0px;
+$breakpoints-sm: 576px;
+$breakpoints-md: 768px;
+$breakpoints-lg: 992px;
+$breakpoints-xl: 1200px;
+$breakpoints-xxl: 1400px;
+
+main{
+  padding: 50px 5px;
+}
+
+@media (min-width: $breakpoints-sm) {
+  main{
+    padding: 50px 50px;
+  }
+}
+
+@media (min-width: $breakpoints-md) {
+  main{
+    padding: 50px 100px;
+  }
+}
+
+@media (min-width: $breakpoints-lg) {
+  main{
+    padding: 50px 200px;
+  }
+}
