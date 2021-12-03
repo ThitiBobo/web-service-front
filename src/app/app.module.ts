@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NotFoundComponent } from './modules/not-found/not-found.component';
 import { HomeComponent } from "./modules/home/home.component";
-import { MoviesModule } from './modules/movies/movies.module';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -19,7 +18,6 @@ import {MatMenuModule} from "@angular/material/menu";
 import {MatCardModule} from "@angular/material/card";
 import {HeaderComponent} from "./shared/components/header/header.component";
 import {FooterComponent} from "./shared/components/footer/footer.component";
-import {MovieCardComponent} from "./shared/components/movie-card/movie-card.component";
 import {NavbarComponent} from "./shared/components/navbar/navbar.component";
 import {ProfilFabComponent} from "./shared/components/profil-fab/profil-fab.component";
 import {ThemeSwitchComponent} from "./shared/components/theme-switch/theme-switch.component";
@@ -39,12 +37,10 @@ import {MatDialogModule} from "@angular/material/dialog";
     ProfilFabComponent,
     ThemeSwitchComponent,
     MovieDescriptionComponent,
-
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MoviesModule,
     LayoutModule,
     MatToolbarModule,
     MatButtonModule,

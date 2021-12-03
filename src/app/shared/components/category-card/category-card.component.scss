@@ -1,0 +1,40 @@
+.category-card{
+  width: 100%;
+  height: 200px;
+
+  background: linear-gradient(40deg, rgb(182, 14, 160) 0%, rgb(231, 28, 160) 35%, rgb(224, 67, 146) 100%);
+  overflow: hidden;
+}
+
+.category-background{
+  width: 200%;
+  height: 200%;
+
+  position: absolute;
+  z-index: 1;
+
+  -webkit-mask-size: auto 50%;
+  mask-size: auto 50%;
+  mask-repeat: repeat;
+  -webkit-mask-repeat: repeat;
+  background-color: #ff97d9;
+
+  transform: rotate(-25deg) translate(-93px, -116px);
+  overflow: hidden;
+}
+
+h1{
+  position: relative;
+  z-index: 10;
+  font-weight: 800;
+  font-size: 2em;
+}
+
+mat-card-content{
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+
+

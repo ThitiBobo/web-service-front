@@ -1,7 +1,7 @@
 import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 
-const DEFAULT_COVER_DARK_THEME = "/assets/images/dessin-1.svg";
-const DEFAULT_COVER_LIGHT_THEME = "/assets/images/dessin-2.svg";
+const DEFAULT_COVER_DARK_THEME = "/assets/svg/desfault-movie-coever-light.svg";
+const DEFAULT_COVER_LIGHT_THEME = "/assets/svg/desfault-movie-coever-dark.svg";
 
 @Component({
   selector: 'app-movie-card',
