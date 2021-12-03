@@ -1,16 +1,17 @@
-<mat-card class="movie-card">
+<a (click)="onClick()">
+  <mat-card class="movie-card">
 
-  <img mat-card-image src="{{coverPath}}" (error)="setDefaultCover()">
-  <!--
-  <div class="cover-container">
-    <img mat-card-image [ngClass]="{'hidden': !hasCover}" src="{{coverPath}}" (error)="setDefaultCover()">
-    <mat-icon class="icon-display" [ngClass]="{'hidden': hasCover}">live_tv</mat-icon>
-  </div>
+    <img mat-card-image src="{{coverPath}}" (error)="setDefaultCover()">
+    <!--
+    <div class="cover-container">
+      <img mat-card-image [ngClass]="{'hidden': !hasCover}" src="{{coverPath}}" (error)="setDefaultCover()">
+      <mat-icon class="icon-display" [ngClass]="{'hidden': hasCover}">live_tv</mat-icon>
+    </div>
 
--->
+  -->
 
-  <mat-card-content>
-    <h3>{{title}}</h3>
-  </mat-card-content>
-</mat-card>
-
+    <mat-card-content>
+      <h3>{{title}}</h3>
+    </mat-card-content>
+  </mat-card>
+</a>

@@ -1,8 +1,8 @@
-<mat-card class="category-card">
-  <div class="category-background"
-       style="mask-image: url('/assets/svg/categories/patterns/action-pattern.svg'); -webkit-mask-image: url('/assets/svg/categories/patterns/action-pattern.svg');">
-  </div>
-  <mat-card-content>
-    <h1>Action</h1>
-  </mat-card-content>
-</mat-card>
+<a (click)="onClick()">
+  <mat-card class="category-card" [style]="linearGradiantStyle">
+    <div class="category-background" [style]="categoryBackground"></div>
+    <mat-card-content>
+      <h1>{{categoryName}}</h1>
+    </mat-card-content>
+  </mat-card>
+</a>

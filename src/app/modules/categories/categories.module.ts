@@ -5,6 +5,11 @@ import { CategoriesRoutingModule } from './categories-routing.module';
 import {CategoriesComponent} from "./categories.component";
 import {CategoryCardComponent} from "../../shared/components/category-card/category-card.component";
 import {MatCardModule} from "@angular/material/card";
+import {FlexLayoutModule} from "@angular/flex-layout";
+
+const CATEGORIES = [
+
+]
 
 
 @NgModule({
@@ -16,6 +21,8 @@ import {MatCardModule} from "@angular/material/card";
     CommonModule,
     CategoriesRoutingModule,
     MatCardModule,
+    FlexLayoutModule,
+
   ],
   exports: [
     CategoriesComponent

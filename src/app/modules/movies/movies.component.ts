@@ -27,7 +27,7 @@ export class MoviesComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  openDialog() {
+  openDialog($event: any) {
     const dialogRef = this.dialog.open(MovieDescriptionComponent, { panelClass: 'custom-dialog-container' });
 
     dialogRef.afterClosed().subscribe(result => {

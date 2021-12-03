@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 
 const DEFAULT_COVER_DARK_THEME = "/assets/svg/desfault-movie-coever-light.svg";
 const DEFAULT_COVER_LIGHT_THEME = "/assets/svg/desfault-movie-coever-dark.svg";
@@ -10,6 +10,9 @@ const DEFAULT_COVER_LIGHT_THEME = "/assets/svg/desfault-movie-coever-dark.svg";
 })
 export class MovieCardComponent implements OnInit {
 
+  @Output() movieClick = new EventEmitter<Number>()
+
+  @Input() id: number = 0;
   @Input() title: String = "";
   @Input() coverPath: String = ""; // default = generic cover
 
@@ -23,5 +26,9 @@ export class MovieCardComponent implements OnInit {
   setDefaultCover() {
     this.hasCover = false;
     this.coverPath = DEFAULT_COVER_DARK_THEME;
+  }
+
+  onClick() {
+    this.movieClick.emit(this.id);
   }
 }
