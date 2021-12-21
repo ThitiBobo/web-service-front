@@ -1,5 +1,6 @@
 import {Component, Inject} from '@angular/core';
 import {DOCUMENT} from '@angular/common';
+import {ThemeService} from "../../../core/services/theme.service";
 
 @Component({
   selector: 'app-theme-switch',
@@ -9,15 +10,14 @@ import {DOCUMENT} from '@angular/common';
 export class ThemeSwitchComponent {
 
   private static readonly DARK_THEME_CLASS = 'dark-theme';
-  public darkMode: boolean = false
 
-  constructor(@Inject(DOCUMENT) private document: Document) {
-    this.darkMode = this.document.documentElement.classList.contains(ThemeSwitchComponent.DARK_THEME_CLASS)
+  constructor(@Inject(DOCUMENT) private document: Document, public service: ThemeService) {
+    service.isDarkMode()? this.selectDarkTheme(): this.selectLightTheme();
   }
 
   toggle() {
-    this.darkMode = !this.darkMode;
-    this.darkMode? this.selectDarkTheme(): this.selectLightTheme();
+    this.service.switchTheme();
+    this.service.isDarkMode()? this.selectDarkTheme(): this.selectLightTheme();
   }
 
   public selectDarkTheme(): void {

@@ -1,4 +1,4 @@
 <button class="theming-button" mat-icon-button (click)="toggle()" aria-label="Example icon button with a home icon">
-  <mat-icon [ngClass]="{'hidden' : !darkMode}">light_mode</mat-icon>
-  <mat-icon [ngClass]="{'hidden' : darkMode}">brightness_2</mat-icon>
+  <mat-icon [ngClass]="{'hidden' : !service.isDarkMode()}">light_mode</mat-icon>
+  <mat-icon [ngClass]="{'hidden' : service.isDarkMode()}">brightness_2</mat-icon>
 </button>
