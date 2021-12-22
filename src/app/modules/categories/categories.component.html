@@ -3,9 +3,9 @@
     fxFlex.xs="100%" fxFlex.sm="100%" fxFlex.md="50%" fxFlex.lg="50%" fxFlex="33%"
     *ngFor="let category of categories"
     (categoryClick)="onCategoryClick($event)"
-    [categoryName]="category.categoryName"
+    [categoryName]="category.name"
     [icon]="category.icon"
-    [color]="category.color">
+    [color]="category.getColor()">
 
   </app-category-card>
 </div>

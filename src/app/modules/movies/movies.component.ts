@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Routes} from "@angular/router";
-import {Movie} from "../../shared/models/Movie";
+import {Movie} from "../../shared/models/movie";
 import {MovieDescriptionComponent} from "../../shared/components/movie-description/movie-description.component";
 import {MatDialog} from "@angular/material/dialog";
 

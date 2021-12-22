@@ -24,6 +24,7 @@ import {ThemeSwitchComponent} from "./shared/components/theme-switch/theme-switc
 import {FlexLayoutModule} from "@angular/flex-layout";
 import { MovieDescriptionComponent } from './shared/components/movie-description/movie-description.component';
 import {MatDialogModule} from "@angular/material/dialog";
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import {MatDialogModule} from "@angular/material/dialog";
     MovieDescriptionComponent,
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     LayoutModule,
