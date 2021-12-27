@@ -16,6 +16,7 @@ const PATH = 'categories/';
 export class CategoryService extends ApiBaseService<Category> {
 
   private path = PATH
+  private selectedCategory: String = 'UK'
 
   constructor(private http: HttpClient) {
     super();
@@ -26,4 +27,7 @@ export class CategoryService extends ApiBaseService<Category> {
     return this.http.get<any[]>(url).pipe(
       retry(3), catchError(this.handleError<Category[]>('category.list', [])));
   }
+
+  getSelectedCategory(){ return this.selectedCategory;}
+  setSelectedCategory(category: String){this.selectedCategory = category;}
 }

@@ -26,7 +26,6 @@ import { MovieDescriptionComponent } from './shared/components/movie-description
 import {MatDialogModule} from "@angular/material/dialog";
 import {HttpClientModule} from "@angular/common/http";
 
-
 @NgModule({
   declarations: [
     AppComponent,

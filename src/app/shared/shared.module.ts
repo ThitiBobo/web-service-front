@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { MoviesRoutingModule } from './movies-routing.module';
-import { MoviesComponent } from './movies.component';
-import {MovieCardComponent} from "../../shared/components/movie-card/movie-card.component";
+import {MovieCardComponent} from "./components/movie-card/movie-card.component";
+import {BrowserModule} from "@angular/platform-browser";
+import {AppRoutingModule} from "../app-routing.module";
+import {LayoutModule} from "@angular/cdk/layout";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatButtonModule} from "@angular/material/button";
 import {MatSidenavModule} from "@angular/material/sidenav";
@@ -12,32 +12,28 @@ import {MatListModule} from "@angular/material/list";
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
 import {MatMenuModule} from "@angular/material/menu";
 import {MatCardModule} from "@angular/material/card";
-import {FlexLayoutModule} from "@angular/flex-layout";
 import {MatDialogModule} from "@angular/material/dialog";
-import {SharedModule} from "../../shared/shared.module";
+import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {FlexLayoutModule} from "@angular/flex-layout";
+import {AppModule} from "../app.module";
+
 
 
 @NgModule({
-  declarations: [
-    MoviesComponent,
-  ],
   imports: [
     CommonModule,
-    MoviesRoutingModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule,
-    MatButtonToggleModule,
-    MatMenuModule,
     MatCardModule,
-    MatDialogModule,
+    MatCardModule,
     FlexLayoutModule,
-    SharedModule,
+  ],
+  declarations: [
+    MovieCardComponent
   ],
   exports: [
-    MoviesComponent
-  ]
+    MovieCardComponent,
+    MatCardModule,
+    FlexLayoutModule,
+  ],
 })
-export class MoviesModule { }
+export class SharedModule { }
