@@ -28,6 +28,7 @@ export class CategoriesComponent implements OnInit{
   onCategoryClick($event: any) {
     console.log($event)
     this.categoryService.setSelectedCategory($event.code)
+    this.categoryService.setSelectedCategoryName($event.categoryName)
     this.router.navigate(['categories',$event.category])
   }
 

@@ -15,7 +15,8 @@ export class CategoryComponent implements OnInit {
 
   @Input() movies: any[] = []
   subscribe: any
-  categoryCode: String = 'UK'
+  categoryCode!: String
+  categoryName!: String
 
   constructor(private movieService: MovieService,
               private categoryService: CategoryService,
@@ -23,6 +24,7 @@ export class CategoryComponent implements OnInit {
 
   ngOnInit(): void {
     this.categoryCode = this.categoryService.getSelectedCategory()
+    this.categoryName = this.categoryService.getSelectedCategoryName()
     this.subscribe = this.movieService.getByCategory(this.categoryCode).subscribe(response => {
       this.movies = response.map(item => new Movie(item.id, item.title, item.description, item.coverPath))
     })

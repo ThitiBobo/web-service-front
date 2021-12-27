@@ -64,6 +64,6 @@ export class CategoryCardComponent implements OnInit, OnChanges {
   }
 
   onClick() {
-    this.categoryClick.emit({category: this.icon, code: this.code});
+    this.categoryClick.emit({categoryName: this.categoryName, category: this.icon, code: this.code});
   }
 }

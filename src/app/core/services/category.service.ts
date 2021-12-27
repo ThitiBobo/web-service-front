@@ -17,6 +17,7 @@ export class CategoryService extends ApiBaseService<Category> {
 
   private path = PATH
   private selectedCategory: String = 'UK'
+  private selectedCategoryName: String = 'Sans catégorie'
 
   constructor(private http: HttpClient) {
     super();
@@ -30,4 +31,9 @@ export class CategoryService extends ApiBaseService<Category> {
 
   getSelectedCategory(){ return this.selectedCategory;}
   setSelectedCategory(category: String){this.selectedCategory = category;}
+
+  getSelectedCategoryName(){ return this.selectedCategoryName;}
+  setSelectedCategoryName(categoryName: String) {
+    this.selectedCategoryName = categoryName
+  }
 }

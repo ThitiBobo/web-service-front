@@ -18,9 +18,12 @@ export class MovieCardComponent implements OnInit {
 
   hasCover:boolean = true
 
-  constructor() { }
+  constructor() {
+    this.setDefaultCover();
+  }
 
   ngOnInit(): void {
+
   }
 
   setDefaultCover() {
