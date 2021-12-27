@@ -24,19 +24,6 @@ export class CategoryService extends ApiBaseService<Category> {
   list(): Observable<Category[]> {
     const url = this.apiUrl + this.path
     return this.http.get<any[]>(url).pipe(
-      retry(3), catchError(this.handleError<Category[]>('getAllCategories', [])));
-  }
-
-  private handleError<T>(operation = 'operation', result?: T) {
-    return (error: any): Observable<T> => {
-      console.error(error);
-      this.log(`${operation} failed: ${error.message}`);
-
-      return of(result as T);
-    };
-  }
-
-  private log(message: string) {
-    console.log(message);
+      retry(3), catchError(this.handleError<Category[]>('category.list', [])));
   }
 }

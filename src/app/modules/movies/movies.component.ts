@@ -1,16 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Routes} from "@angular/router";
 import {Movie} from "../../shared/models/movie";
 import {MovieDescriptionComponent} from "../../shared/components/movie-description/movie-description.component";
 import {MatDialog} from "@angular/material/dialog";
-
-const MOVIES: Movie[] = [
-  {id:0 ,title:"le seigneur des anneaux", description:"une petite description", coverPath:"/assets/images/le-seigneur-des-anneaux.jpg", imagesPath:[]},
-  {id:0 ,title:"le seigneur des anneaux 2", description:"une petite description", coverPath:"/assets/images/le-seigneur-des-anneaux.jpg", imagesPath:[]},
-  {id:0 ,title:"FF3", description:"une petite description", coverPath:"/assets/images/le-seigneur-des-anneaux", imagesPath:[]},
-  {id:0 ,title:"le seigneur des anneaux", description:"une petite description", coverPath:"/assets/images/le-seigneur-des-anneaux.jpg", imagesPath:[]},
-  {id:0 ,title:"le seigneur des anneaux", description:"une petite description", coverPath:"/assets/images/le-seigneur-des-anneaux.jpg", imagesPath:[]},
-];
+import {Category} from "../../shared/models/category";
+import {CategoryService} from "../../core/services/category.service";
+import {MovieService} from "../../core/services/movie.service";
 
 
 @Component({
@@ -20,11 +15,16 @@ const MOVIES: Movie[] = [
 })
 export class MoviesComponent implements OnInit {
 
-  movies = MOVIES
+  @Input() movies: any[] = []
+  subscribe: any
 
-  constructor(public dialog: MatDialog) { }
+  constructor(private movieService: MovieService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
+    this.subscribe = this.movieService.list().subscribe(response => {
+      this.movies = response.map(item => new Movie(item.id, item.title, item.description, item.coverPath))
+    })
+
   }
 
   openDialog($event: any) {
@@ -33,5 +33,9 @@ export class MoviesComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
+  }
+
+  ngOnDestroy() {
+    this.subscribe.unsubscribe();
   }
 }
