@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {Color} from "../../utils/Color";
 import {hsl2rgb} from "../../utils/color-lib";
+import {Category} from "../../models/category";
 
 const PATH = "/assets/svg/categories/patterns/"
 const DEFAULT_ICON = "default"
@@ -14,8 +15,9 @@ const EXTENSION = "-pattern.svg"
 })
 export class CategoryCardComponent implements OnInit, OnChanges {
 
-  @Output() categoryClick = new EventEmitter<String>()
+  @Output() categoryClick = new EventEmitter<any>()
 
+  @Input() code: String = "UK"
   @Input() color = new Color("#4d304c")
   @Input() categoryName: String = "Autre"
   @Input() icon: String = DEFAULT_ICON;
@@ -62,6 +64,6 @@ export class CategoryCardComponent implements OnInit, OnChanges {
   }
 
   onClick() {
-    this.categoryClick.emit(this.categoryName);
+    this.categoryClick.emit({category: this.icon, code: this.code});
   }
 }
