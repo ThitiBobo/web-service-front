@@ -7,7 +7,7 @@ const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'home', component: HomeComponent},
   {
-    path: 'signin',
+    path: 'login',
     loadChildren: () => import('./modules/signin/signin.module')
       .then(mod => mod.SigninModule)
   },
