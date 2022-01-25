@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormControl, FormGroup, FormGroupDirective, NgForm, Validators} from "@angular/forms";
 import {ErrorStateMatcher} from "@angular/material/core";
 
@@ -8,6 +8,8 @@ import {ErrorStateMatcher} from "@angular/material/core";
   styleUrls: ['./login-form.component.scss']
 })
 export class LoginFormComponent {
+
+  @Output() login = new EventEmitter<string>();
 
   hide = true;
   matcher = new MyErrorStateMatcher();
@@ -21,8 +23,7 @@ export class LoginFormComponent {
   get passwordInput() { return this.loginForm.get('password'); }
 
   onSubmit() {
-    console.log("submit")
-    console.log(this.loginForm.value)
+    this.login.emit(this.loginForm.value);
   }
 
 }
