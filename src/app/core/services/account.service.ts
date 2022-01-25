@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import {User} from "../../shared/models/user";
+import {RegisterRequestAdapter, User} from "../../shared/models/user";
 import {environment} from "../../../environments/environment";
 
 
@@ -23,6 +23,9 @@ export class AccountService {
     }
   }
 
+  public isUserExist(): boolean{
+    return localStorage.getItem('user') != undefined
+  }
   public get userValue(): User {
     return this.userSubject.value;
   }
@@ -48,6 +51,8 @@ export class AccountService {
   }
 
   register(user: User) {
-    return this.http.post(`${environment.apiUrl}/auth/register`, user);
+    console.log('post signup')
+    let item = RegisterRequestAdapter.adapt(user)
+    return this.http.post(`${environment.apiUrl}/auth/signup`, item);
   }
 }

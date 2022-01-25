@@ -1,3 +1,8 @@
 <mat-card>
   <app-login-form (login)="onSubmit($event)"></app-login-form>
+  <div id="login-form-options">
+    <a [routerLink]="['/register']">Register</a>
+    <a [routerLink]="['/forgot-password']">Forgot your password ?</a>
+    <a [routerLink]="[returnUrl]"><mat-icon>arrow_back</mat-icon> Back to Home page</a>
+  </div>
 </mat-card>

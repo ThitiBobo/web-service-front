@@ -1,1 +1,41 @@
-<p>register works!</p>
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+  <h2>Register</h2>
+
+  <mat-form-field appearance="fill">
+    <label for="username">Username: </label>
+    <input id="username" type="text" required
+           matInput formControlName="username" [errorStateMatcher]="matcher"
+           placeholder="votre nom d'utilisateur">
+    <mat-error *ngIf="registerForm.controls['email'].hasError('required')">
+      Username is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <label for="email">Email: </label>
+    <input id="email" type="email" required
+           matInput formControlName="email" [errorStateMatcher]="matcher"
+           placeholder="Ex. example@email.com">
+    <mat-error *ngIf="registerForm.hasError('email') && !registerForm.hasError('required')">
+      Please enter a valid email address
+    </mat-error>
+    <mat-error *ngIf="registerForm.controls['email'].hasError('required')">
+      Email is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <label for="password">Password: </label>
+    <input id="password" [type]="hide? 'password' : 'text'" required
+           matInput formControlName="password" [errorStateMatcher]="matcher"
+           placeholder="votre mot de passe">
+    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    <mat-hint *ngIf="!registerForm.controls['password'].value">Enter your password</mat-hint>
+    <mat-error *ngIf="registerForm.controls['password'].hasError('required')">
+      Password is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit" [disabled]="!registerForm.valid">Login</button>
+</form>

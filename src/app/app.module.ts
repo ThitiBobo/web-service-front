@@ -24,7 +24,8 @@ import {ThemeSwitchComponent} from "./shared/components/theme-switch/theme-switc
 import {FlexLayoutModule} from "@angular/flex-layout";
 import { MovieDescriptionComponent } from './shared/components/movie-description/movie-description.component';
 import {MatDialogModule} from "@angular/material/dialog";
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import {JwtInterceptor} from "./core/interceptors/jwt-interceptor.interceptor";
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import {HttpClientModule} from "@angular/common/http";
     FlexLayoutModule,
   ],
   providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
   ],
   exports: [],
   bootstrap: [AppComponent]
