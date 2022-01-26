@@ -1,14 +1,26 @@
-<button mat-mini-fab color="primary" [matMenuTriggerFor]="menu">
+
+<div [ngClass]="{'hidden' : connected}">
+  <button mat-raised-button color="basic"
+          [ngClass]="{'hidden' : registration_button_disabled}"
+          (click)="onRegisterClick()">Register
+  </button>
+  <button mat-raised-button color="primary"
+          [ngClass]="{'hidden' : connection_button_disabled}"
+          (click)="onLoginClick()">Login</button>
+</div>
+
+<button [ngClass]="{'hidden' : !connected}" mat-mini-fab color="primary" [matMenuTriggerFor]="menu">
   <fa-icon [icon]="faUser" size="lg"></fa-icon>
 </button>
 
 <mat-menu #menu="matMenu" xPosition="before">
+  <p>{{username}}</p>
   <button mat-menu-item>
     <fa-icon [icon]="faUser" size="lg"></fa-icon>
     <span>Profil</span>
   </button>
   <mat-divider></mat-divider>
-  <button mat-menu-item>
+  <button mat-menu-item (click)="onLogoutClick()">
     <mat-icon>logout</mat-icon>
     <span>Logout</span>
   </button>

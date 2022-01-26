@@ -10,7 +10,7 @@
 
   <div class="right-bloc">
     <app-theme-switch></app-theme-switch>
-    <app-profil-fab></app-profil-fab>
+    <app-profil-fab [connected]="connected" [username]="username" (clickButton)="onAuthClick($event)"></app-profil-fab>
   </div>
 
 </header>

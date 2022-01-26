@@ -44,16 +44,11 @@ export class SigninComponent implements OnInit {
     // reset alerts on submit
     this.alertService.clear();
 
+    console.log(this.returnUrl)
     this.loading = true;
     this.accountService.login(event.login, event.password)
-      .pipe(first())
-      .subscribe(
-        data => {
-          this.router.navigate([this.returnUrl]);
-        },
-        error => {
-          this.alertService.error(error);
-          this.loading = false;
-        });
+      .subscribe(data => {
+        this.router.navigate([this.returnUrl])
+      })
   }
 }
