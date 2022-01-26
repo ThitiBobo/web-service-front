@@ -3,7 +3,7 @@
   <h2>Login</h2>
 
   <mat-form-field appearance="fill">
-    <label for="first-name">First Name: </label>
+    <label for="first-name">Email: </label>
     <input id="first-name" type="email" required
            matInput formControlName="login" [errorStateMatcher]="matcher"
            placeholder="Ex. example@email.com">
@@ -17,7 +17,7 @@
   </mat-form-field>
 
   <mat-form-field appearance="fill">
-    <label for="password">Last Name: </label>
+    <label for="password">Password: </label>
     <input id="password" [type]="hide? 'password' : 'text'" required
            matInput formControlName="password" [errorStateMatcher]="matcher"
            placeholder="Password">

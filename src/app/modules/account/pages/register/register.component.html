@@ -3,8 +3,8 @@
   <h2>Register</h2>
 
   <mat-form-field appearance="fill">
-    <label for="username">Username: </label>
-    <input id="username" type="text" required
+    <label for="name">Username: </label>
+    <input id="name" type="text" required
            matInput formControlName="username" [errorStateMatcher]="matcher"
            placeholder="votre nom d'utilisateur">
     <mat-error *ngIf="registerForm.controls['email'].hasError('required')">
@@ -13,8 +13,8 @@
   </mat-form-field>
 
   <mat-form-field appearance="fill">
-    <label for="email">Email: </label>
-    <input id="email" type="email" required
+    <label for="username">Email: </label>
+    <input id="username" type="email" required
            matInput formControlName="email" [errorStateMatcher]="matcher"
            placeholder="Ex. example@email.com">
     <mat-error *ngIf="registerForm.hasError('email') && !registerForm.hasError('required')">
@@ -37,5 +37,5 @@
     </mat-error>
   </mat-form-field>
 
-  <button mat-raised-button color="primary" type="submit" [disabled]="!registerForm.valid">Login</button>
+  <button mat-raised-button color="primary" type="submit" [disabled]="!registerForm.valid">Register</button>
 </form>
