@@ -18,6 +18,8 @@ export class MoviesComponent implements OnInit {
   @Input() movies: any[] = []
   subscribe: any
 
+  value = "frf"
+
   constructor(private movieService: MovieService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
@@ -27,8 +29,16 @@ export class MoviesComponent implements OnInit {
 
   }
 
-  openDialog($event: any) {
-    const dialogRef = this.dialog.open(MovieDescriptionComponent, { panelClass: 'custom-dialog-container' });
+  openDialog(event: any) {
+    console.log(event)
+    const dialogRef = this.dialog.open(
+      MovieDescriptionComponent,
+      {
+        panelClass: 'custom-dialog-container',
+        data: {
+          id: event
+        }
+      });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
