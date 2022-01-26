@@ -17,6 +17,7 @@ import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {AppModule} from "../app.module";
+import { AlertComponent } from './components/alert/alert.component';
 
 
 
@@ -28,7 +29,8 @@ import {AppModule} from "../app.module";
     FlexLayoutModule,
   ],
   declarations: [
-    MovieCardComponent
+    MovieCardComponent,
+    AlertComponent
   ],
   exports: [
     MovieCardComponent,

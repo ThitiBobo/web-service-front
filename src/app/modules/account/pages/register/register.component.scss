@@ -1,0 +1,29 @@
+$breakpoints-xs: 0px;
+$breakpoints-sm: 576px;
+$breakpoints-md: 768px;
+$breakpoints-lg: 992px;
+$breakpoints-xl: 1200px;
+$breakpoints-xxl: 1400px;
+
+:host {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    .mat-form-field {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      width: 100%;
+    }
+
+    button {
+      margin-top: 10px;
+      width: 100%;
+    }
+  }
+}

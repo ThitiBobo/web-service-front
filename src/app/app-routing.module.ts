@@ -7,9 +7,9 @@ const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'home', component: HomeComponent},
   {
-    path: 'signin',
-    loadChildren: () => import('./modules/signin/signin.module')
-      .then(mod => mod.SigninModule)
+    path: 'auth',
+    loadChildren: () => import('./modules/account/account.module')
+      .then(mod => mod.AccountModule)
   },
   {
     path: 'movies',
