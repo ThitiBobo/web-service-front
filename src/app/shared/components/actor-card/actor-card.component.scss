@@ -1,0 +1,23 @@
+.icon-display {
+  transform: scale(3);
+}
+
+.hidden{
+  display: none!important;
+}
+
+.cover-container {
+  width: 300px;
+  height: 400px;
+  overflow: hidden;
+}
+
+/* Resize images */
+.cover-container img {
+  max-width: 200px;
+  height: auto;
+}
+
+svg{
+  background-color: aqua;
+}

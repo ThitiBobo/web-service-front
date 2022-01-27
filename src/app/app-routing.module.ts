@@ -17,6 +17,11 @@ const routes: Routes = [
       .then(mod => mod.MoviesModule)
   },
   {
+    path: 'actors',
+    loadChildren: () => import('./modules/actors/actors.module')
+      .then(mod => mod.ActorsModule)
+  },
+  {
     path: 'categories',
     loadChildren: () => import('./modules/categories/categories.module')
       .then(mod => mod.CategoriesModule)

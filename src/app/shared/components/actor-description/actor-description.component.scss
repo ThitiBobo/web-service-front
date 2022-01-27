@@ -1,0 +1,11 @@
+/* Resize images */
+img {
+  max-width: 200px;
+  margin-right: 40px;
+  height: auto;
+}
+
+.actor-card{
+  display: flex;
+  flex-flow: row;
+}
