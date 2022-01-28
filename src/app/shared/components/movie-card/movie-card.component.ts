@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
+import {ThemeService} from "@core/services/theme.service";
 
 const DEFAULT_COVER_DARK_THEME = "/assets/svg/desfault-movie-coever-light.svg";
 const DEFAULT_COVER_LIGHT_THEME = "/assets/svg/desfault-movie-coever-dark.svg";
@@ -18,7 +19,7 @@ export class MovieCardComponent implements OnInit {
 
   hasCover:boolean = true
 
-  constructor() {
+  constructor(private themeService: ThemeService,) {
     this.setDefaultCover();
   }
 
@@ -28,7 +29,10 @@ export class MovieCardComponent implements OnInit {
 
   setDefaultCover() {
     this.hasCover = false;
-    this.coverPath = DEFAULT_COVER_DARK_THEME;
+    if (this.themeService.isDarkMode())
+      this.coverPath = DEFAULT_COVER_DARK_THEME
+    else
+      this.coverPath = DEFAULT_COVER_LIGHT_THEME
   }
 
   onClick() {

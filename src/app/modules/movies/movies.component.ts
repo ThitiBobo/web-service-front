@@ -29,20 +29,17 @@ export class MoviesComponent implements OnInit {
 
   }
 
-  openDialog(event: any) {
-    console.log(event)
+  openDialog(id: any) {
+
+    let movie = this.movies.find( i => i.id == id)
     const dialogRef = this.dialog.open(
       MovieDescriptionComponent,
       {
         panelClass: 'custom-dialog-container',
         data: {
-          id: event
+          movie: movie
         }
       });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
   }
 
   ngOnDestroy() {
