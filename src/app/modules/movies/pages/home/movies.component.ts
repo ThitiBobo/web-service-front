@@ -1,11 +1,11 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Routes} from "@angular/router";
-import {Movie} from "../../shared/models/movie";
-import {MovieDescriptionComponent} from "../../shared/components/movie-description/movie-description.component";
+import {Movie} from "@shared/models/movie";
+import {MovieDescriptionComponent} from "@shared/components/movie-description/movie-description.component";
 import {MatDialog} from "@angular/material/dialog";
-import {Category} from "../../shared/models/category";
-import {CategoryService} from "../../core/services/category.service";
-import {MovieService} from "../../core/services/movie.service";
+import {Category} from "@shared/models/category";
+import {CategoryService} from "@core/services/category.service";
+import {MovieService} from "@core/services/movie.service";
 
 
 @Component({

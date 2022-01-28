@@ -1,0 +1,48 @@
+<form [formGroup]="movieForm" (ngSubmit)="onSubmit()">
+
+  <h2>{{title}}</h2>
+
+  <mat-form-field appearance="fill">
+    <label for="title">Titre: </label>
+    <input id="title" type="text" required
+           matInput formControlName="title" [errorStateMatcher]="matcher"
+           placeholder="Titre du film">
+    <mat-error *ngIf="movieForm.controls['title'].hasError('required')">
+      Le titre du film est <strong>requis</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <label for="subTitle">Sous-titre: </label>
+    <input id="subTitle" type="text"
+           matInput formControlName="subTitle"
+           placeholder="Sous-titre du film">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="coverPath">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Durée du film</mat-label>
+    <input matInput type="number" formControlName="duration">
+  </mat-form-field>
+
+
+  <mat-form-field appearance="fill">
+    <mat-label>Description</mat-label>
+    <textarea matInput formControlName="description" placeholder="Description du film"></textarea>
+  </mat-form-field>
+
+
+  <ngp-image-picker [_config]="imagePickerConf" ($imageChanged)="onImageChange($event)"></ngp-image-picker>
+
+<div>
+  <button mat-button color="primary" (click)="cancel()">Annuler</button>
+  <button mat-raised-button color="primary" type="submit" [disabled]="!movieForm.valid">{{actionButton}}</button>
+</div>
+
+</form>
