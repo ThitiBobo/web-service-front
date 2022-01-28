@@ -4,35 +4,15 @@
   <div fxLayout="row wrap" fxLayoutGap="grid" id="main-content-container">
     <div fxFlex.xs="100%" fxFlex.sm="50%" fxFlex.md="33%" fxFlex="20%" id="sidebar">
       <div class="image-cover">
-        <img src="/assets/images/le-seigneur-des-anneaux.jpg">
+        <img src="{{coverPath}}" (error)="setDefaultCover()">
       </div>
     </div>
     <div fxFlex.xs="100%" fxFlex.sm="50%" fxFlex.md="65%" fxFlex="70%" id="content-container">
       <div>
-        <h1>Le seigneur des anneaux</h1>
+        <h1>{{title}}</h1>
         <h2>sous titre</h2>
       </div>
-      <p>
-        Un jeune et timide `Hobbit', Frodon Sacquet, hérite d'un anneau magique. Bien loin d'être une simple
-        babiole, il s'agit d'un instrument de pouvoir absolu qui permettrait à Sauron, le `Seigneur des ténèbres',
-        de régner sur la `Terre du Milieu' et de réduire en esclavage ses peuples. Frodon doit parvenir jusqu'à la
-        `Crevasse du Destin' pour détruire l'anneau.
-
-        Un jeune et timide `Hobbit', Frodon Sacquet, hérite d'un anneau magique. Bien loin d'être une simple
-        babiole, il s'agit d'un instrument de pouvoir absolu qui permettrait à Sauron, le `Seigneur des ténèbres',
-        de régner sur la `Terre du Milieu' et de réduire en esclavage ses peuples. Frodon doit parvenir jusqu'à la
-        `Crevasse du Destin' pour détruire l'anneau.
-
-        Un jeune et timide `Hobbit', Frodon Sacquet, hérite d'un anneau magique. Bien loin d'être une simple
-        babiole, il s'agit d'un instrument de pouvoir absolu qui permettrait à Sauron, le `Seigneur des ténèbres',
-        de régner sur la `Terre du Milieu' et de réduire en esclavage ses peuples. Frodon doit parvenir jusqu'à la
-        `Crevasse du Destin' pour détruire l'anneau.
-
-        Un jeune et timide `Hobbit', Frodon Sacquet, hérite d'un anneau magique. Bien loin d'être une simple
-        babiole, il s'agit d'un instrument de pouvoir absolu qui permettrait à Sauron, le `Seigneur des ténèbres',
-        de régner sur la `Terre du Milieu' et de réduire en esclavage ses peuples. Frodon doit parvenir jusqu'à la
-        `Crevasse du Destin' pour détruire l'anneau.
-      </p>
+      <p>{{description}}</p>
       <div>
         actors
       </div>
