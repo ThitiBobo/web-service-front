@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MovieService} from "@core/services/movie.service";
+import {Movie} from "@shared/models/movie";
 
 @Component({
   selector: 'app-create',
@@ -15,6 +16,6 @@ export class CreateComponent implements OnInit {
 
   create(event: any) {
     console.log(event)
-    this.movieService.create()
+    this.movieService.create(event).subscribe(movie => console.log(movie))
   }
 }

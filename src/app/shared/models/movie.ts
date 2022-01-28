@@ -1,7 +1,7 @@
 
 export class Movie{
 
-  id: number
+  id!: number
   title: String
   description: String
   coverPath: String
@@ -11,7 +11,7 @@ export class Movie{
   imagesPath: String[]
 
   constructor(
-    id: number = 0,
+    id: number | undefined,
     title: String,
     description: String = "",
     coverPath: String = "",
@@ -19,7 +19,7 @@ export class Movie{
     releaseDate: String = "",
     imagesPath: String[] = []) {
 
-    this.id = id
+    if (id != null) this.id = id
     this.title = title
     this.description = description
     // TODO crasseux
@@ -28,5 +28,4 @@ export class Movie{
     this.releaseDate = releaseDate
     this.imagesPath = imagesPath
   }
-
 }

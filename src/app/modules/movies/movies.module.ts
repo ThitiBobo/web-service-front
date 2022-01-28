@@ -23,6 +23,9 @@ import {MatInputModule} from "@angular/material/input";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
 import {NgpImagePickerModule} from "ngp-image-picker";
+import {HTTP_INTERCEPTORS} from "@angular/common/http";
+import {JwtInterceptor} from "@core/interceptors/jwt-interceptor.interceptor";
+import {ErrorInterceptor} from "@core/interceptors/error.interceptor";
 
 
 @NgModule({
@@ -57,6 +60,10 @@ import {NgpImagePickerModule} from "ngp-image-picker";
   exports: [
     MoviesComponent,
     CreateComponent,
+  ],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
   ]
 })
 export class MoviesModule { }
