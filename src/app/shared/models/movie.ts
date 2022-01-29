@@ -1,25 +1,25 @@
 
 export class Movie{
 
-  id: number
-  title: String
-  description: String
-  coverPath: String
+  id!: number
+  title: string
+  description: string
+  coverPath: string
   duration: number
-  releaseDate: String
+  releaseDate: string
 
-  imagesPath: String[]
+  imagesPath: string[]
 
   constructor(
-    id: number = 0,
-    title: String,
-    description: String = "",
-    coverPath: String = "",
+    id: number | undefined,
+    title: string,
+    description: string = "",
+    coverPath: string = "",
     duration: number = 0,
-    releaseDate: String = "",
-    imagesPath: String[] = []) {
+    releaseDate: string = "",
+    imagesPath: string[] = []) {
 
-    this.id = id
+    if (id != null) this.id = id
     this.title = title
     this.description = description
     // TODO crasseux
@@ -28,5 +28,4 @@ export class Movie{
     this.releaseDate = releaseDate
     this.imagesPath = imagesPath
   }
-
 }

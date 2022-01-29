@@ -42,11 +42,11 @@ export class User {
     this._roles = value;
   }
 
-  get token(): string {
+  get accessToken(): string {
     return this._token;
   }
 
-  set token(value: string) {
+  set accessToken(value: string) {
     this._token = value;
   }
 

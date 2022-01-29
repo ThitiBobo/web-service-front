@@ -30,4 +30,13 @@ export class MovieService extends ApiBaseService<Movie>{
     return this.http.get<any[]>(url).pipe(
       retry(3), catchError(this.handleError<Movie[]>('category.getByCategoy', [])));
   }
+
+  create(movie: any): Observable<any> {
+    const url = this.apiUrl + this.path
+
+    return this.http.post<Movie>(url, movie).pipe(
+      retry(3), catchError(this.handleError<Movie>()))
+
+
+  }
 }
