@@ -18,8 +18,6 @@ export class MoviesComponent implements OnInit {
   @Input() movies: any[] = []
   subscribe: any
 
-  value = "frf"
-
   constructor(private movieService: MovieService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
