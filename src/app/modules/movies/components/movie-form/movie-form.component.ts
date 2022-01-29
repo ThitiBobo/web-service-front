@@ -3,6 +3,7 @@ import {ErrorStateMatcher} from "@angular/material/core";
 import {FormControl, FormGroup, FormGroupDirective, NgForm, Validators} from "@angular/forms";
 import {MyErrorStateMatcher} from "@modules/account/components/login-form/login-form.component";
 import {Router} from "@angular/router";
+import {Movie} from "@shared/models/movie";
 
 @Component({
   selector: 'app-movie-form',
@@ -11,7 +12,7 @@ import {Router} from "@angular/router";
 })
 export class MovieFormComponent {
 
-  @Output() movie = new EventEmitter<string>();
+  @Output() movie = new EventEmitter<Movie>();
 
   matcher = new MovieFormErrorStateMatcher();
 
@@ -29,7 +30,7 @@ export class MovieFormComponent {
     title: new FormControl('', [Validators.required]),
     subTitle: new FormControl(),
     description:new FormControl(),
-    coverPath: new FormControl('', [Validators.required]),
+    coverPath: new FormControl(),
     duration:new FormControl(),
     releaseDate:new FormControl(),
     backgroundImagePath:new FormControl(),
@@ -44,9 +45,7 @@ export class MovieFormComponent {
   }
 
   onImageChange(event: any) {
-    console.log(event)
-    console.log(event.image)
-
+    this.movieForm.value.coverPath = event
   }
 
   cancel() {

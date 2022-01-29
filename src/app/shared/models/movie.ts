@@ -2,22 +2,22 @@
 export class Movie{
 
   id!: number
-  title: String
-  description: String
-  coverPath: String
+  title: string
+  description: string
+  coverPath: string
   duration: number
-  releaseDate: String
+  releaseDate: string
 
-  imagesPath: String[]
+  imagesPath: string[]
 
   constructor(
     id: number | undefined,
-    title: String,
-    description: String = "",
-    coverPath: String = "",
+    title: string,
+    description: string = "",
+    coverPath: string = "",
     duration: number = 0,
-    releaseDate: String = "",
-    imagesPath: String[] = []) {
+    releaseDate: string = "",
+    imagesPath: string[] = []) {
 
     if (id != null) this.id = id
     this.title = title
