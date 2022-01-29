@@ -18,6 +18,9 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {AppModule} from "../app.module";
 import { AlertComponent } from './components/alert/alert.component';
+import { ActorCardComponent } from './components/actor-card/actor-card.component';
+import { ActorDescriptionComponent } from './components/actor-description/actor-description.component';
+import { CharacterCardComponent } from './components/character-card/character-card.component';
 
 
 
@@ -30,12 +33,17 @@ import { AlertComponent } from './components/alert/alert.component';
   ],
   declarations: [
     MovieCardComponent,
-    AlertComponent
+    ActorCardComponent,
+    AlertComponent,
+    ActorCardComponent,
+    ActorDescriptionComponent,
+    CharacterCardComponent
   ],
   exports: [
     MovieCardComponent,
     MatCardModule,
     FlexLayoutModule,
+    ActorCardComponent,
   ],
 })
 export class SharedModule { }

@@ -1,0 +1,11 @@
+<a (click)="onClick()">
+  <mat-card class="character-card">
+
+    <img mat-card-image src="{{movie?.coverPath}}" (error)="setDefaultCover()">
+
+    <mat-card-content>
+      <h3>A joué {{character?.firstname}}</h3>
+      <h4>Dans {{movie?.title}}</h4>
+    </mat-card-content>
+  </mat-card>
+</a>

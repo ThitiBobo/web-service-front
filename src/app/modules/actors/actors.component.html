@@ -1,0 +1,12 @@
+<div class="actor-content">
+  <h1>Acteurs</h1>
+
+  <div fxLayout="row wrap" fxLayoutGap="20px grid">
+    <div fxFlex.xs="100%" fxFlex.sm="50%" fxFlex.md="33%" fxFlex="20%" *ngFor="let actor of actors">
+      <app-actor-card class="actor-card"
+                      [actor]="actor"
+                      [picturePath]="actor.picturePath"
+                      (actorClick)="openDialog($event)"></app-actor-card>
+    </div>
+  </div>
+</div>

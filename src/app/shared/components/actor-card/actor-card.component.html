@@ -1,0 +1,11 @@
+<a (click)="onClick()">
+  <mat-card class="actor-card">
+
+    <img mat-card-image small-image src="{{picturePath}}" (error)="setDefaultCover()">
+
+
+    <mat-card-content>
+      <h3>{{actor.firstname}} {{actor.lastname}}</h3>
+    </mat-card-content>
+  </mat-card>
+</a>
