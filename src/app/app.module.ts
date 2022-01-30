@@ -27,6 +27,7 @@ import {MatDialogModule} from "@angular/material/dialog";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {JwtInterceptor} from "@core/interceptors/jwt-interceptor.interceptor";
 import {ErrorInterceptor} from "@core/interceptors/error.interceptor";
+import {SharedModule} from "@shared/shared.module";
 
 
 @NgModule({
@@ -41,24 +42,25 @@ import {ErrorInterceptor} from "@core/interceptors/error.interceptor";
     ThemeSwitchComponent,
     MovieDescriptionComponent,
   ],
-  imports: [
-    HttpClientModule,
-    BrowserModule,
-    AppRoutingModule,
-    LayoutModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule,
-    MatButtonToggleModule,
-    MatMenuModule,
-    MatCardModule,
-    MatDialogModule,
-    FontAwesomeModule,
-    BrowserAnimationsModule,
-    FlexLayoutModule,
-  ],
+    imports: [
+        HttpClientModule,
+        BrowserModule,
+        AppRoutingModule,
+        LayoutModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatSidenavModule,
+        MatIconModule,
+        MatListModule,
+        MatButtonToggleModule,
+        MatMenuModule,
+        MatCardModule,
+        MatDialogModule,
+        FontAwesomeModule,
+        BrowserAnimationsModule,
+        FlexLayoutModule,
+        SharedModule,
+    ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},

@@ -1,0 +1,28 @@
+.scroller{
+  display: flex;
+  flex-flow: row nowrap;
+
+  justify-content: space-between;
+  gap: 10px;
+
+  align-items: center;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+/* width */
+.scroller::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+.scroller::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* Handle */
+.scroller::-webkit-scrollbar-thumb {
+  background: #7d7d7d;
+  border-radius: 10px;
+  box-shadow: 0 0 1.5px #000000;
+}
+
