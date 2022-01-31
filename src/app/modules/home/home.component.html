@@ -7,26 +7,34 @@
                     [coverPath]="movie.coverPath"
                     (movieClick)="openMovie($event)"></app-movie-poster>
   </div>
-  <a href="movies">
-    <button mat-raised-button color="primary">
+</div>
+<div class="align-right">
+  <button mat-raised-button color="primary">
+    <a href="movies">
       Voir tout
-    </button>
-  </a>
+    </a>
+  </button>
 </div>
 
+
+<br class="qui Oserait Faire Un Truc Aussi Moche">
+<br class="qui Oserait Faire Un Truc Aussi Moche">
 <br class="qui Oserait Faire Un Truc Aussi Moche">
 
 <h1>Acteurs</h1>
-<mat-card-content class="scroller">
+<mat-card-content class="scroller align-baseline">
   <div fxFlex.xs="100%" fxFlex.sm="50%" fxFlex.md="33%" fxFlex="20%" *ngFor="let actor of actors">
     <app-actor-card class="actor-card"
                     [actor]="actor"
                     [picturePath]="actor.picturePath"
                     (actorClick)="openActor($event)"></app-actor-card>
   </div>
-  <a href="actors">
-    <button mat-raised-button color="primary">
-      Voir tout
-    </button>
-  </a>
 </mat-card-content>
+
+<div class="align-right">
+  <button mat-raised-button color="primary">
+    <a href="actors">
+      Voir tout
+    </a>
+  </button>
+</div>

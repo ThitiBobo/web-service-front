@@ -9,6 +9,11 @@
   overflow-x: scroll;
   overflow-y: hidden;
 }
+
+.align-baseline{
+  align-items: baseline;
+}
+
 /* width */
 .scroller::-webkit-scrollbar {
   width: 20px;
@@ -26,3 +31,8 @@
   box-shadow: 0 0 1.5px #000000;
 }
 
+.align-right{
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+}
