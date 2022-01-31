@@ -8,13 +8,16 @@
     </mat-card-content>
   </mat-card>
 
-  <div fxLayout="row wrap" fxLayoutGap="20px grid">
-    <div fxFlex.xs="100%" fxFlex.sm="50%" fxFlex.md="33%" fxFlex="20%" *ngFor="let character of characters">
-      <app-character-card class="movie-card"
-                          [movie]="character.movie"
-                          [character]="character"
-                          [coverPath]="character.movie.coverPath"
-                          (movieClick)="openDialog($event)"></app-character-card>
-    </div>
-  </div>
+  <h1>Personnages joués</h1>
+  <mat-grid-list cols="3" rowHeight="250px" gutterSize="5px">
+    <mat-grid-tile
+      *ngFor="let character of characters">
+      <app-character-card
+        [movie]="character.movie"
+        [character]="character"
+        [coverPath]="character.movie.coverPath"
+        (movieClick)="openMovie($event)"></app-character-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+
 </a>

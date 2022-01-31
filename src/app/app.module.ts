@@ -28,6 +28,7 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {JwtInterceptor} from "@core/interceptors/jwt-interceptor.interceptor";
 import {ErrorInterceptor} from "@core/interceptors/error.interceptor";
 import {SharedModule} from "@shared/shared.module";
+import { MoviePosterComponent } from './modules/home/components/movie-poster/movie-poster.component';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import {SharedModule} from "@shared/shared.module";
     ProfilFabComponent,
     ThemeSwitchComponent,
     MovieDescriptionComponent,
+    MoviePosterComponent,
   ],
     imports: [
         HttpClientModule,

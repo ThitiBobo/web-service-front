@@ -1,28 +1,32 @@
-<mat-card>
-  <mat-card-header><h1>Films</h1></mat-card-header>
-  <mat-card-content class="scroller">
-    <div *ngFor="let movie of movies">
-      <app-movie-card class="movie-card"
-                      [id]="movie.id"
-                      [title]="movie.title"
-                      [coverPath]="movie.coverPath"
-                      (movieClick)="openMovie($event)"></app-movie-card>
-    </div>
-    <a mat-button color="primary" href="movies">Voir tout</a>
-  </mat-card-content>
-</mat-card>
+<h1>Films</h1>
+<div class="scroller">
+  <div *ngFor="let movie of movies">
+    <app-movie-poster class=""
+                    [id]="movie.id"
+                    [title]="movie.title"
+                    [coverPath]="movie.coverPath"
+                    (movieClick)="openMovie($event)"></app-movie-poster>
+  </div>
+  <a href="movies">
+    <button mat-raised-button color="primary">
+      Voir tout
+    </button>
+  </a>
+</div>
 
 <br class="qui Oserait Faire Un Truc Aussi Moche">
 
-<mat-card>
-  <mat-card-header><h1>Acteurs</h1></mat-card-header>
-  <mat-card-content class="scroller">
-    <div fxFlex.xs="100%" fxFlex.sm="50%" fxFlex.md="33%" fxFlex="20%" *ngFor="let actor of actors">
-      <app-actor-card class="actor-card"
-                      [actor]="actor"
-                      [picturePath]="actor.picturePath"
-                      (actorClick)="openActor($event)"></app-actor-card>
-    </div>
-    <a mat-button color="primary" href="actors">Voir tout</a>
-  </mat-card-content>
-</mat-card>
+<h1>Acteurs</h1>
+<mat-card-content class="scroller">
+  <div fxFlex.xs="100%" fxFlex.sm="50%" fxFlex.md="33%" fxFlex="20%" *ngFor="let actor of actors">
+    <app-actor-card class="actor-card"
+                    [actor]="actor"
+                    [picturePath]="actor.picturePath"
+                    (actorClick)="openActor($event)"></app-actor-card>
+  </div>
+  <a href="actors">
+    <button mat-raised-button color="primary">
+      Voir tout
+    </button>
+  </a>
+</mat-card-content>
