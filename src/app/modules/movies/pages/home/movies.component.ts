@@ -26,7 +26,7 @@ export class MoviesComponent implements OnInit {
 
   ngOnInit(): void {
     this.subscribe = this.movieService.list().subscribe(response => {
-      this.movies = response.map(item => new Movie(item.id, item.title, item.description, item.coverPath))
+      this.movies = response.map(item => new Movie(item.id, item.categories, item.title, item.description, item.coverPath))
     })
 
   }

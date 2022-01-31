@@ -26,7 +26,7 @@ export class CategoryComponent implements OnInit {
     this.categoryCode = this.categoryService.getSelectedCategory()
     this.categoryName = this.categoryService.getSelectedCategoryName()
     this.subscribe = this.movieService.getByCategory(this.categoryCode).subscribe(response => {
-      this.movies = response.map(item => new Movie(item.id, item.title, item.description, item.coverPath))
+      this.movies = response.map(item => new Movie(item.id, item.categories, item.title, item.description, item.coverPath))
     })
 
   }
