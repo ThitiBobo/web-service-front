@@ -1,5 +1,5 @@
 
-<div [ngClass]="{'hidden' : connected}">
+<div id="unauthenticated" [ngClass]="{'hidden' : connected}">
   <button mat-raised-button color="basic"
           [ngClass]="{'hidden' : registration_button_disabled}"
           (click)="onRegisterClick()">Register
@@ -14,11 +14,7 @@
 </button>
 
 <mat-menu #menu="matMenu" xPosition="before">
-  <p>{{username}}</p>
-  <button mat-menu-item>
-    <fa-icon [icon]="faUser" size="lg"></fa-icon>
-    <span>Profil</span>
-  </button>
+  <h3>{{username}}</h3>
   <mat-divider></mat-divider>
   <button mat-menu-item (click)="onLogoutClick()">
     <mat-icon>logout</mat-icon>

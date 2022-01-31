@@ -39,4 +39,8 @@ export class HeaderComponent {
       this.router.navigate(['/auth/register']);
     }
   }
+
+    onLogoutClick() {
+
+    }
 }

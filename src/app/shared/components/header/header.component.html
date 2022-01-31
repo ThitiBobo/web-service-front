@@ -3,7 +3,7 @@
   <div>
     <a href="#">
       <img src="assets/svg/logo.svg">
-      <h2>AlhuileCiné</h2>
+      <h2 id="title">AlhuileCiné</h2>
     </a>
     <app-navbar></app-navbar>
   </div>
@@ -11,6 +11,51 @@
   <div class="right-bloc">
     <app-theme-switch></app-theme-switch>
     <app-profil-fab [connected]="connected" [username]="username" (clickButton)="onAuthClick($event)"></app-profil-fab>
+
+    <button id="menu" mat-flat-button color="primary" [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon style="color: #FFFFFF">menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu" xPosition="before">
+      <h3 [ngClass]="{'hidden' : !connected}">{{username}}</h3>
+
+      <mat-divider [ngClass]="{'hidden' : !connected}"></mat-divider>
+
+      <button mat-menu-item [ngClass]="{'hidden' : connected}" (click)="onAuthClick('login')">
+        <span>Login</span>
+      </button>
+
+      <button mat-menu-item [ngClass]="{'hidden' : connected}" (click)="onAuthClick('register')">
+        <span>Register</span>
+      </button>
+
+      <mat-divider [ngClass]="{'hidden' : connected}"></mat-divider>
+
+      <a mat-menu-item href="">
+        <span>Home</span>
+      </a>
+
+      <a mat-menu-item href="movies">
+        <span>Films</span>
+      </a>
+
+      <a mat-menu-item href="categories">
+        <span>Genres</span>
+      </a>
+
+      <a mat-menu-item href="actors">
+        <span>Acteurs</span>
+      </a>
+
+      <mat-divider [ngClass]="{'hidden' : !connected}"></mat-divider>
+
+      <button mat-menu-item [ngClass]="{'hidden' : !connected}" (click)="onAuthClick('logout')">
+        <mat-icon>logout</mat-icon>
+        <span>Logout</span>
+      </button>
+
+    </mat-menu>
+
+
   </div>
 
 </header>
