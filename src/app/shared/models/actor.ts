@@ -1,3 +1,4 @@
+import {environment} from "@env/environment";
 
 export class Actor{
 
@@ -24,7 +25,7 @@ export class Actor{
     this.lastname = lastname
     this.bio = bio
     // TODO crasseux
-    this.picturePath = (picturePath != null) ? 'http://localhost:8080/' + picturePath : null
+    this.picturePath = (picturePath != null) ? environment.apiUrl + '/' + picturePath : null
     this.birthDate = birthDate
     this.imagesPath = imagesPath
   }

@@ -1,3 +1,4 @@
+import {environment} from "@env/environment";
 
 export class Movie{
 
@@ -23,7 +24,7 @@ export class Movie{
     this.title = title
     this.description = description
     // TODO crasseux
-    this.coverPath = 'http://localhost:8080/' + coverPath
+    this.coverPath = environment.apiUrl + '/' + coverPath
     this.duration = duration
     this.releaseDate = releaseDate
     this.imagesPath = imagesPath

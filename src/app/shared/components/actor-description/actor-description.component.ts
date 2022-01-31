@@ -5,6 +5,7 @@ import {MAT_DIALOG_DATA, MatDialog} from "@angular/material/dialog";
 import {CharacterService} from "../../../core/services/character.service";
 import {MovieDescriptionComponent} from "../movie-description/movie-description.component";
 import {Character} from "../../models/character";
+import {environment} from "@env/environment";
 
 const DEFAULT_COVER_DARK_THEME = "/assets/svg/default-actor-pic-light.svg";
 const DEFAULT_COVER_LIGHT_THEME = "/assets/svg/default-actor-pic-dark.svg";
@@ -35,7 +36,7 @@ export class ActorDescriptionComponent implements OnInit {
   ngOnInit(): void {
     this.subscribe = this.characterService.getByActor(this.actor.id).subscribe(response => {
       this.characters = response.map(item => new Character(item.id, item.movieId, item.actorId, item.firstname, item.lastname, item.movie, item.actor));
-      this.characters.forEach(character => character.movie.coverPath = 'http://localhost:8080/' + character.movie.coverPath) // PAS OUF
+      this.characters.forEach(character => character.movie.coverPath = environment.apiUrl + '/' + character.movie.coverPath) // PAS OUF
       console.log(this.characters);
     });
 
