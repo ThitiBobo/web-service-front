@@ -1,0 +1,13 @@
+<a (click)="onClick()">
+  <div class="movie-poster">
+
+    <img src="{{coverPath}}" (error)="setDefaultCover()">
+    <!--
+    <div class="cover-container">
+      <img mat-card-image [ngClass]="{'hidden': !hasCover}" src="{{coverPath}}" (error)="setDefaultCover()">
+      <mat-icon class="icon-display" [ngClass]="{'hidden': hasCover}">live_tv</mat-icon>
+    </div>
+
+  -->
+  </div>
+</a>
