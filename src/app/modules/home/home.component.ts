@@ -32,14 +32,14 @@ export class HomeComponent implements OnInit {
     this.subscribeMovies = this.movieService.list().subscribe(response => {
       var arrLength = response.length;
       if(arrLength > this.maxMovies){
-        response.splice( 0, this.maxMovies);
+        response = response.splice( 0, this.maxMovies);
       }
       this.movies = response.map(item => new Movie(item.id, item.title, item.description, item.coverPath))
     })
     this.subscribeActors = this.actorService.list().subscribe(response => {
       var arrLength = response.length;
       if(arrLength > this.maxActors){
-        response.splice( 0, this.maxActors);
+        response = response.splice( 0, this.maxActors);
       }
       this.actors = response.map(item => new Actor(item.id, item.firstname, item.lastname, "", null))
     })

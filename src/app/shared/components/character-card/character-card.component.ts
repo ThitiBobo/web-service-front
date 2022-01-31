@@ -12,7 +12,7 @@ const DEFAULT_COVER_LIGHT_THEME = "/assets/svg/desfault-movie-coever-dark.svg";
 })
 export class CharacterCardComponent implements OnInit {
 
-  @Output() movieClick = new EventEmitter<Number>()
+  @Output() movieClick = new EventEmitter<Movie>()
 
   @Input() character: Character | undefined;
   @Input() movie: Movie | undefined;
@@ -32,7 +32,7 @@ export class CharacterCardComponent implements OnInit {
   }
 
   onClick() {
-    this.movieClick.emit(this.character?.id);
+    this.movieClick.emit(this.movie);
   }
 
 }

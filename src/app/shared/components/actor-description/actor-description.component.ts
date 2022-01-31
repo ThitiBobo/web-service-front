@@ -43,11 +43,11 @@ export class ActorDescriptionComponent implements OnInit {
   }
 
 
-  openDialog($event: any) {
+  openMovie($event: any) {
     const dialogRef = this.dialog.open(MovieDescriptionComponent, {
       panelClass: 'custom-dialog-container',
       data: {
-        movie: $event.movie
+        movie: $event
       }
     });
 

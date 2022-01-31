@@ -21,16 +21,18 @@ import { AlertComponent } from './components/alert/alert.component';
 import { ActorCardComponent } from './components/actor-card/actor-card.component';
 import { ActorDescriptionComponent } from './components/actor-description/actor-description.component';
 import { CharacterCardComponent } from './components/character-card/character-card.component';
+import {MatGridListModule} from "@angular/material/grid-list";
 
 
 
 @NgModule({
-  imports: [
-    CommonModule,
-    MatCardModule,
-    MatCardModule,
-    FlexLayoutModule,
-  ],
+    imports: [
+        CommonModule,
+        MatCardModule,
+        MatCardModule,
+        FlexLayoutModule,
+        MatGridListModule,
+    ],
   declarations: [
     MovieCardComponent,
     ActorCardComponent,
