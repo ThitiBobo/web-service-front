@@ -1,8 +1,14 @@
 <mat-dialog-content class="mat-typography">
-
+  <!--
   <div id="headband-image" class="center-cropped"
-       style="background-image: url('/assets/images/le-seigneur-des-anneaux-detail.jpg'); filter: brightness(50%);">
+       [ngStyle]="{'background-image' : 'url(\'' + headbandImagePath +'\')', 'filter': 'brightness(50%)'}">
   </div>
+  -->
+
+  <div class="category-card" [style]="linearGradiantStyle" [ngStyle]="{'filter': 'brightness(50%)'}">
+    <div class="category-background" [style]="categoryBackground" class="center-cropped"></div>
+  </div>
+
   <div id="movie-info-container">
     <div id="image-container">
       <img src="{{coverPath}}" (error)="setDefaultCover()">

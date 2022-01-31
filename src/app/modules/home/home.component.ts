@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
       if(arrLength > this.maxMovies){
         response = response.splice( 0, this.maxMovies);
       }
-      this.movies = response.map(item => new Movie(item.id, item.title, item.description, item.coverPath))
+      this.movies = response.map(item => new Movie(item.id, item.categories, item.title, item.description, item.coverPath))
     })
     this.subscribeActors = this.actorService.list().subscribe(response => {
       var arrLength = response.length;
